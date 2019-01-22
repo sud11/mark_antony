@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    tools:context="com.sud.markantony.InsultActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="10"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:src="@drawable/banner"
+            android:id="@+id/imageView"
+
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:id="@+id/quoteBox"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:gravity="center_vertical"
+            android:textIsSelectable="true"
+            android:text="Love all, trust a few, do wrong to none."
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="60sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:src="@drawable/scroll"
+            android:id="@+id/quoteMe"
+            android:scaleType="fitCenter"
+            android:layout_weight="2.5"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="#efbf7b"
+             tools:context="com.sud.markantony.EnglishText">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/clearText"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/clear_button"
+        android:scaleType="fitCenter"
+        android:layout_gravity="top|end"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/englishText"
+        android:layout_alignParentTop="true"/>
+
+    <EditText
+        android:id="@+id/englishText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your text"
+        android:layout_toLeftOf="@id/clearText"/>
+
+</RelativeLayout>
