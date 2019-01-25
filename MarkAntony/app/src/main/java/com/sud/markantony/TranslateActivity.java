@@ -1,5 +1,7 @@
 package com.sud.markantony;
 
+import android.app.ActionBar;
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +9,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -19,6 +23,7 @@ public class TranslateActivity extends AppCompatActivity implements AsyncRespons
     private Recycler_View_Adapter adapter;
     private String m_Text = "";
     RestAPICall myAsyncTask;
+    private Activity mCurrentActivity = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +43,8 @@ public class TranslateActivity extends AppCompatActivity implements AsyncRespons
         final EnglishText fragment = (EnglishText) getSupportFragmentManager().findFragmentById(R.id.englishTextFragment);
         fragment.setSiblingAdapter(adapter);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        Button button_translate = (Button) findViewById(R.id.button_translate);
+        button_translate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 myAsyncTask = new RestAPICall(getApplicationContext());

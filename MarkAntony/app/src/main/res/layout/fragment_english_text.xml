@@ -27,4 +27,14 @@
         android:hint="Enter your text"
         android:layout_toLeftOf="@id/clearText"/>
 
+    <Button
+        android:id="@+id/button_translate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/clearText"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:text="Translate" />
+
+
 </RelativeLayout>

@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
+import android.view.HapticFeedbackConstants;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -15,6 +17,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    private Vibrator myVib;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +31,19 @@ public class MainActivity extends AppCompatActivity {
         Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
         // Applying font
         txtAppname.setTypeface(tf);
+        // For Haptic feedback
+        myVib = (Vibrator) this.getSystemService(VIBRATOR_SERVICE);
+
 
         ImageButton button1 = (ImageButton) findViewById(R.id.button1);
         ImageButton button2 = (ImageButton) findViewById(R.id.button2);
         ImageButton button3 = (ImageButton) findViewById(R.id.button3);
         ImageButton button4 = (ImageButton) findViewById(R.id.button4);
 
-
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                myVib.vibrate(50);
 //                http://api.funtranslations.com/translate/shakespeare.json?text=
                 Intent ins = new Intent(getApplicationContext(), TranslateActivity.class);
                 startActivity(ins);
@@ -46,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                myVib.vibrate(30);
                 Intent ins = new Intent(getApplicationContext(),InsultActivity.class);
                 startActivity(ins);
             }
@@ -54,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                myVib.vibrate(30);
                 Intent ins = new Intent(getApplicationContext(), QuotesActivity.class);
                 startActivity(ins);
             }
@@ -62,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                myVib.vibrate(30);
                 Intent ins = new Intent(getApplicationContext(), QuickTranslate.class);
                 startActivity(ins);
             }
@@ -134,6 +143,5 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }
